@@ -1,3 +1,4 @@
+
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth() + 1; //January is 0!
@@ -13,3 +14,9 @@ if (mm < 10) {
     
 today = yyyy + '-' + mm + '-' + dd;
 document.getElementById("datepicker").setAttribute("max", today);
+document.getElementById("datepicker").setAttribute("value", today);
+function search() {
+    var new_date = document.getElementById("datepicker").value
+	console.log(new_date)
+    window.location.replace('/anpr/show_data?date='+new_date);
+}
